@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami           = "ami-0bb4c991fa89d4b9b" # Ubuntu Server 20.04 LTS. Use "ami-0453898e98046c639" for Amazon  Linux2
+  ami           = "ami-0bb4c991fa89d4b9b" 
   instance_type = "t2.micro"
 
   tags = {
