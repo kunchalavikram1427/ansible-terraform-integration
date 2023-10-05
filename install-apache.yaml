@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  remote_user: ec2-user
+  tasks:
+    - name: install httpd
+      yum: 
+        name: httpd
+        state: latest
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+    - name: copy custom index.html file
+      copy: 
+        src: ./index.html
+        dest: /var/www/html/index.html
